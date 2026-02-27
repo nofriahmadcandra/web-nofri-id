@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nofri Ahmad Candra | Ruang Inspirasi Pendidikan</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Portofolio resmi Nofri Ahmad Candra, S.Pd. Guru Bahasa Arab di MTs Surau Qur'an Boarding School, Batusangkar, Pengembang Web Edukasi, dan Blogger SEO.">
+    <meta name="keywords" content="Nofri Ahmad Candra, Guru Bahasa Arab, Web Development Edukasi, SEO, MTs Surau Qur'an Boarding School, Pramuka, Batusangkar">
+    <meta name="author" content="Nofri Ahmad Candra">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Tailwind CSS (via CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: { DEFAULT: '#0f172a', light: '#1e293b', dark: '#020617' },
+                        gold: { DEFAULT: '#d97706', light: '#fbbf24' },
+                        brand: { light: '#f8fafc' }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        /* Custom styling untuk FAQ Accordion */
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+    </style>
+</head>
+<body class="font-sans text-gray-700 bg-brand-light antialiased selection:bg-gold-light selection:text-navy-dark relative">
+
+    <!-- Header / Navbar -->
+    <header class="fixed w-full top-0 z-50 glass-nav transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <span class="font-heading font-bold text-2xl text-navy">Nofri<span class="text-gold">.id</span></span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-6 lg:space-x-8">
+                    <a href="#beranda" class="text-gray-600 hover:text-gold font-medium transition-colors">Beranda</a>
+                    <a href="#tentang" class="text-gray-600 hover:text-gold font-medium transition-colors">Profil</a>
+                    <a href="#keahlian" class="text-gray-600 hover:text-gold font-medium transition-colors">Layanan</a>
+                    <a href="#portofolio" class="text-gray-600 hover:text-gold font-medium transition-colors">Karya</a>
+                    <a href="#blog" class="text-gray-600 hover:text-gold font-medium transition-colors">Artikel</a>
+                    <a href="#kontak" class="text-gray-600 hover:text-gold font-medium transition-colors">Kontak</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-navy hover:text-gold focus:outline-none p-2 rounded-lg transition-colors hover:bg-gray-100/50">
+                        <i id="mobile-icon" class="fas fa-bars text-2xl transition-transform duration-300"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="absolute top-full left-4 right-4 mt-2 bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/50 p-3 transition-all duration-300 origin-top transform opacity-0 scale-95 pointer-events-none -translate-y-4 z-50 md:hidden flex flex-col gap-1">
+            <a href="#beranda" class="mobile-link flex items-center px-4 py-3 rounded-xl text-base font-semibold text-navy hover:text-gold hover:bg-gold/10 transition-all">
+                <i class="fas fa-home w-6 text-center mr-2 opacity-70"></i> Beranda
+            </a>
+            <a href="#tentang" class="mobile-link flex items-center px-4 py-3 rounded-xl text-base font-semibold text-navy hover:text-gold hover:bg-gold/10 transition-all">
+                <i class="fas fa-user w-6 text-center mr-2 opacity-70"></i> Profil & Pengalaman
+            </a>
+            <a href="#keahlian" class="mobile-link flex items-center px-4 py-3 rounded-xl text-base font-semibold text-navy hover:text-gold hover:bg-gold/10 transition-all">
+                <i class="fas fa-star w-6 text-center mr-2 opacity-70"></i> Layanan Keahlian
+            </a>
+            <a href="#portofolio" class="mobile-link flex items-center px-4 py-3 rounded-xl text-base font-semibold text-navy hover:text-gold hover:bg-gold/10 transition-all">
+                <i class="fas fa-briefcase w-6 text-center mr-2 opacity-70"></i> Karya & Portofolio
+            </a>
+            <a href="#blog" class="mobile-link flex items-center px-4 py-3 rounded-xl text-base font-semibold text-navy hover:text-gold hover:bg-gold/10 transition-all">
+                <i class="fas fa-pen-nib w-6 text-center mr-2 opacity-70"></i> Artikel Blog
+            </a>
+            <a href="#kontak" class="mobile-link flex items-center px-4 py-3 rounded-xl text-base font-semibold text-navy hover:text-gold hover:bg-gold/10 transition-all">
+                <i class="fas fa-envelope w-6 text-center mr-2 opacity-70"></i> Hubungi Saya
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="beranda" class="pt-28 pb-20 md:pt-40 md:pb-32 lg:min-h-screen flex items-center relative overflow-hidden">
+            <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-gold/10 blur-3xl z-0"></div>
+            <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-navy/5 blur-3xl z-0"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+                    
+                    <div class="w-full md:w-3/5 text-center md:text-left" data-aos="fade-right" data-aos-duration="1000">
+                        <span class="text-gold font-semibold tracking-wider uppercase text-sm mb-4 block">Ahlan wa Sahlan, Saya</span>
+                        <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-navy mb-4 leading-tight">
+                            Nofri Ahmad Candra<span class="text-gold">, S.Pd.</span>
+                        </h1>
+                        <h2 class="text-xl md:text-2xl text-gray-600 font-medium mb-2">
+                            Ruang Inspirasi Pendidikan
+                        </h2>
+                        
+                        <!-- Efek Typewriter Baru -->
+                        <div class="text-lg md:text-xl font-semibold mb-6 h-8 flex flex-wrap items-center justify-center md:justify-start">
+                            <span class="text-navy mr-2">Berfokus pada:</span>
+                            <span id="typewriter" class="text-gold"></span>
+                            <span class="text-gold animate-pulse ml-[2px] font-light">|</span>
+                        </div>
+
+                        <p class="text-gray-500 mb-8 max-w-2xl mx-auto md:mx-0 text-lg leading-relaxed">
+                            Guru Bahasa Arab berdedikasi tinggi dan Web Developer yang siap menghadirkan solusi digital inovatif, mulai dari sektor pendidikan hingga kebutuhan bisnis.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                            <a href="#portofolio" class="bg-navy hover:bg-navy-light text-white px-8 py-3 rounded-lg font-medium transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2">
+                                Lihat Karya Saya <i class="fas fa-arrow-right text-sm"></i>
+                            </a>
+                            <button onclick="openWaModal()" class="border-2 border-navy text-navy hover:bg-navy hover:text-white px-8 py-3 rounded-lg font-medium transition-all flex items-center justify-center">
+                                Hubungi Saya
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="w-full md:w-2/5 flex justify-center" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                        <div class="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
+                            <div class="absolute inset-0 border-4 border-gold rounded-full transform translate-x-4 translate-y-4"></div>
+                            
+                            <div class="absolute inset-0 bg-navy rounded-full overflow-hidden border-4 border-white shadow-xl group">
+                                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Teknologi dan Pendidikan" class="absolute inset-0 z-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" onerror="this.src='https://picsum.photos/seed/edukasi/800/800'">
+                                <div class="absolute inset-0 bg-navy/50 z-10 transition-colors duration-500 group-hover:bg-navy/40"></div>
+                                <div class="absolute inset-0 z-20 flex flex-col items-center justify-center text-center p-3 md:p-8 transform transition-transform duration-500 group-hover:-translate-y-2">
+                                    <div class="bg-white/20 p-3 md:p-5 rounded-full backdrop-blur-md mb-2 md:mb-4 border border-white/30 shadow-lg">
+                                        <i class="fas fa-laptop-code text-2xl md:text-4xl text-gold"></i>
+                                    </div>
+                                    <span class="font-heading font-bold text-white text-base md:text-xl tracking-wide leading-tight drop-shadow-md">
+                                        Inovasi<br><span class="text-gold">Pendidikan & Digital</span>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="absolute w-full -bottom-5 flex justify-center md:w-auto md:block md:bottom-4 md:-left-4 z-30">
+                                <div class="bg-white p-2.5 md:p-3 rounded-xl shadow-lg border border-gray-100 flex items-center gap-2 md:gap-3 animate-bounce w-max" style="animation-duration: 3s;">
+                                    <div class="bg-blue-100 p-1.5 md:p-2 rounded-full text-blue-600">
+                                        <i class="fas fa-code text-sm md:text-base"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-[10px] md:text-xs text-gray-500 font-medium mb-0.5">Guru &</p>
+                                        <p class="text-xs md:text-sm text-navy font-bold">Developer</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Tentang Saya & Timeline Section -->
+        <section id="tentang" class="py-20 bg-white relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy mb-4">Profil & Perjalanan</h2>
+                    <div class="w-20 h-1 bg-gold mx-auto rounded-full"></div>
+                </div>
+
+                <!-- Profil Singkat -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-20">
+                    <div class="lg:col-span-7" data-aos="fade-right">
+                        <h3 class="text-2xl font-heading font-semibold text-navy mb-4">Mendedikasikan Diri untuk <span class="text-gold">Pendidikan & Teknologi</span></h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed text-justify">
+                            Sebagai seorang guru di <strong>MTs Surau Qur'an Boarding School, Batusangkar</strong>, saya memiliki komitmen mendalam untuk mencerdaskan generasi bangsa melalui nilai-nilai Islami dan pendidikan bahasa Arab yang interaktif.
+                        </p>
+                        <p class="text-gray-600 mb-6 leading-relaxed text-justify">
+                            Namun, dedikasi saya tidak berhenti di ruang kelas konvensional. Melalui keahlian dalam <em>Web Development</em> dan <em>Analisis Data</em>, saya aktif merancang berbagai solusi digital. Mulai dari website resmi sekolah, profil bisnis, hingga pendampingan karya tulis ilmiah.
+                        </p>
+                        <div class="flex items-center gap-4 mt-8 p-4 bg-brand-light rounded-lg border-l-4 border-gold shadow-sm">
+                            <i class="fas fa-quote-left text-gold text-2xl opacity-50"></i>
+                            <p class="text-sm text-gray-700 italic font-medium">"Teknologi tidak akan menggantikan guru hebat, tetapi teknologi di tangan guru yang hebat dapat menjadi transformasional."</p>
+                        </div>
+                    </div>
+                    
+                    <div class="lg:col-span-5 grid grid-cols-2 gap-4" data-aos="fade-left">
+                        <div class="bg-brand-light p-6 rounded-2xl shadow-sm text-center border border-gray-100 hover:border-gold transition-colors">
+                            <i class="fas fa-book-quran text-3xl text-navy mb-3"></i>
+                            <h4 class="font-bold text-lg text-navy">Pendidik</h4>
+                            <p class="text-xs text-gray-500">Guru Bahasa Arab</p>
+                        </div>
+                        <div class="bg-brand-light p-6 rounded-2xl shadow-sm text-center border border-gray-100 hover:border-gold transition-colors">
+                            <i class="fas fa-laptop-code text-3xl text-gold mb-3"></i>
+                            <h4 class="font-bold text-lg text-navy">Web Dev</h4>
+                            <p class="text-xs text-gray-500">Website Custom</p>
+                        </div>
+                        <div class="bg-brand-light p-6 rounded-2xl shadow-sm text-center border border-gray-100 hover:border-gold transition-colors">
+                            <i class="fas fa-file-signature text-3xl text-purple-600 mb-3"></i>
+                            <h4 class="font-bold text-lg text-navy">Konsultan</h4>
+                            <p class="text-xs text-gray-500">Akademik & Data</p>
+                        </div>
+                        <div class="bg-brand-light p-6 rounded-2xl shadow-sm text-center border border-gray-100 hover:border-gold transition-colors">
+                            <i class="fas fa-chart-line text-3xl text-blue-500 mb-3"></i>
+                            <h4 class="font-bold text-lg text-navy">Blogger</h4>
+                            <p class="text-xs text-gray-500">Pakar SEO</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Pengalaman (Fitur Baru) -->
+                <div class="max-w-4xl mx-auto" data-aos="fade-up">
+                    <h3 class="text-xl font-heading font-bold text-center text-navy mb-10"><i class="fas fa-history text-gold mr-2"></i> Rekam Jejak & Pengalaman</h3>
+                    <div class="relative border-l-2 border-gold/30 ml-4 md:ml-0 md:pl-0">
+                        
+                        <!-- Timeline Item 1 -->
+                        <div class="mb-10 ml-8 md:ml-10 relative">
+                            <div class="absolute -left-[41px] md:-left-[49px] top-1 w-6 h-6 bg-gold rounded-full border-4 border-white shadow"></div>
+                            <div class="bg-brand-light p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                                <span class="text-gold text-sm font-bold tracking-wider mb-1 block">Saat Ini</span>
+                                <h4 class="text-lg font-bold text-navy mb-1">Guru Bahasa Arab & Pembina Pramuka</h4>
+                                <p class="text-sm text-gray-500 mb-3"><i class="fas fa-map-marker-alt mr-1"></i> MTs Surau Qur'an Boarding School, Batusangkar</p>
+                                <p class="text-sm text-gray-600">Mengajar, mendidik karakter santri, dan memimpin ekstrakurikuler pramuka dengan pendekatan Islami dan modern.</p>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 2 -->
+                        <div class="mb-10 ml-8 md:ml-10 relative">
+                            <div class="absolute -left-[41px] md:-left-[49px] top-1 w-6 h-6 bg-navy rounded-full border-4 border-white shadow"></div>
+                            <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                                <span class="text-navy text-sm font-bold tracking-wider mb-1 block">Freelance & Bisnis</span>
+                                <h4 class="text-lg font-bold text-navy mb-1">Web Developer & Konsultan Akademik</h4>
+                                <p class="text-sm text-gray-500 mb-3"><i class="fas fa-globe mr-1"></i> Batusangkar / Remote</p>
+                                <p class="text-sm text-gray-600">Mengerjakan proyek pembuatan website sekolah, website pribadi, serta membantu mahasiswa dan profesional dalam pengolahan data (Excel) dan penyusunan karya ilmiah.</p>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 3 -->
+                        <div class="ml-8 md:ml-10 relative">
+                            <div class="absolute -left-[41px] md:-left-[49px] top-1 w-6 h-6 bg-blue-500 rounded-full border-4 border-white shadow"></div>
+                            <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                                <span class="text-blue-500 text-sm font-bold tracking-wider mb-1 block">Pendidikan Tinggi</span>
+                                <h4 class="text-lg font-bold text-navy mb-1">Sarjana Pendidikan (S.Pd.)</h4>
+                                <p class="text-sm text-gray-500 mb-3"><i class="fas fa-university mr-1"></i> Universitas Lulusan (Silakan diisi)</p>
+                                <p class="text-sm text-gray-600">Fokus pada pedagogi, pengembangan kurikulum, dan integrasi teknologi dalam pendidikan.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Keahlian Section -->
+        <section id="keahlian" class="py-20 bg-brand-light">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy mb-4">Layanan & Keahlian</h2>
+                    <div class="w-20 h-1 bg-gold mx-auto rounded-full"></div>
+                    <p class="mt-4 text-gray-500">Sinergi antara kemampuan pedagogik, teknikal, dan analitikal</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Skill 1 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group relative overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                        <div class="absolute -right-8 -top-8 w-32 h-32 bg-navy/5 rounded-full group-hover:scale-150 transition-transform duration-700 ease-in-out"></div>
+                        <div class="relative z-10">
+                            <div class="w-14 h-14 bg-navy/5 rounded-xl flex items-center justify-center mb-6 group-hover:bg-navy transition-colors duration-300">
+                                <i class="fas fa-chalkboard-teacher text-2xl text-navy group-hover:text-white transition-colors duration-300"></i>
+                            </div>
+                            <h3 class="font-heading font-bold text-navy text-xl mb-3">Pengajaran Bahasa Arab</h3>
+                            <p class="text-gray-600 mb-6 leading-relaxed text-sm">Mengembangkan metode pembelajaran bahasa Arab yang interaktif dan menyenangkan dengan mengintegrasikan kurikulum modern.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-xs font-semibold bg-gray-50 text-gray-600 border border-gray-200 px-3 py-1.5 rounded-full">Metode Interaktif</span>
+                                <span class="text-xs font-semibold bg-gray-50 text-gray-600 border border-gray-200 px-3 py-1.5 rounded-full">Bina Karakter</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skill 2 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group relative overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                        <div class="absolute -right-8 -top-8 w-32 h-32 bg-gold/5 rounded-full group-hover:scale-150 transition-transform duration-700 ease-in-out"></div>
+                        <div class="relative z-10">
+                            <div class="w-14 h-14 bg-gold/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-gold transition-colors duration-300">
+                                <i class="fas fa-code text-2xl text-gold group-hover:text-white transition-colors duration-300"></i>
+                            </div>
+                            <h3 class="font-heading font-bold text-navy text-xl mb-3">Web Development</h3>
+                            <p class="text-gray-600 mb-6 leading-relaxed text-sm">Membangun solusi digital yang fungsional mulai dari website sekolah, profil bisnis UMKM, hingga portofolio personal.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-xs font-semibold bg-gray-50 text-gray-600 border border-gray-200 px-3 py-1.5 rounded-full">Custom Web HTML</span>
+                                <span class="text-xs font-semibold bg-gray-50 text-gray-600 border border-gray-200 px-3 py-1.5 rounded-full">Tailwind CSS</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skill 3 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group relative overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                        <div class="absolute -right-8 -top-8 w-32 h-32 bg-purple-500/5 rounded-full group-hover:scale-150 transition-transform duration-700 ease-in-out"></div>
+                        <div class="relative z-10">
+                            <div class="w-14 h-14 bg-purple-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-purple-600 transition-colors duration-300">
+                                <i class="fas fa-file-signature text-2xl text-purple-600 group-hover:text-white transition-colors duration-300"></i>
+                            </div>
+                            <h3 class="font-heading font-bold text-navy text-xl mb-3">Asistensi Akademik & Data</h3>
+                            <p class="text-gray-600 mb-6 leading-relaxed text-sm">Layanan pendampingan karya tulis ilmiah. Serta ahli merancang rumus, pengolahan data otomatis, dan aplikasi berbasis Microsoft Excel.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-xs font-semibold bg-gray-50 text-gray-600 border border-gray-200 px-3 py-1.5 rounded-full">Karya Ilmiah</span>
+                                <span class="text-xs font-semibold bg-gray-50 text-gray-600 border border-gray-200 px-3 py-1.5 rounded-full">Aplikasi Excel</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skill 4 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group relative overflow-hidden" data-aos="fade-up" data-aos-delay="400">
+                        <div class="absolute -right-8 -top-8 w-32 h-32 bg-blue-500/5 rounded-full group-hover:scale-150 transition-transform duration-700 ease-in-out"></div>
+                        <div class="relative z-10">
+                            <div class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors duration-300">
+                                <i class="fas fa-search text-2xl text-blue-600 group-hover:text-white transition-colors duration-300"></i>
+                            </div>
+                            <h3 class="font-heading font-bold text-navy text-xl mb-3">Blogging & Optimasi SEO</h3>
+                            <p class="text-gray-600 mb-6 leading-relaxed text-sm">Mengelola konten edukasi yang informatif. Ahli dalam riset kata kunci tren dan copywriting agar artikel menduduki peringkat atas di mesin pencari.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-xs font-semibold bg-gray-50 text-gray-600 border border-gray-200 px-3 py-1.5 rounded-full">Riset Keyword</span>
+                                <span class="text-xs font-semibold bg-gray-50 text-gray-600 border border-gray-200 px-3 py-1.5 rounded-full">SEO Copywriting</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skill 5 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group relative overflow-hidden" data-aos="fade-up" data-aos-delay="500">
+                        <div class="absolute -right-8 -top-8 w-32 h-32 bg-green-500/5 rounded-full group-hover:scale-150 transition-transform duration-700 ease-in-out"></div>
+                        <div class="relative z-10">
+                            <div class="w-14 h-14 bg-green-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-green-600 transition-colors duration-300">
+                                <i class="fas fa-campground text-2xl text-green-600 group-hover:text-white transition-colors duration-300"></i>
+                            </div>
+                            <h3 class="font-heading font-bold text-navy text-xl mb-3">Kepemimpinan (Pramuka)</h3>
+                            <p class="text-gray-600 mb-6 leading-relaxed text-sm">Berpengalaman sebagai pembina pramuka dalam mendidik karakter santri yang tangguh, disiplin, mandiri, serta memiliki jiwa kepemimpinan yang tinggi.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-xs font-semibold bg-gray-50 text-gray-600 border border-gray-200 px-3 py-1.5 rounded-full">Manajemen Acara</span>
+                                <span class="text-xs font-semibold bg-gray-50 text-gray-600 border border-gray-200 px-3 py-1.5 rounded-full">Bina Karakter</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Portofolio Section -->
+        <section id="portofolio" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy mb-4">Karya & Portofolio</h2>
+                    <div class="w-20 h-1 bg-gold mx-auto rounded-full"></div>
+                    <p class="mt-4 text-gray-500">Implementasi gagasan ke dalam karya nyata</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Portfolio 1 -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 group hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-delay="100">
+                        <div class="relative h-48 overflow-hidden bg-gray-200">
+                            <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Web Sekolah" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://picsum.photos/seed/sekolah/800/600'">
+                            <div class="absolute top-4 left-4"><span class="bg-gold text-white text-xs font-bold px-3 py-1 rounded-full shadow">Web Institusi</span></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-heading font-bold text-xl text-navy mb-2">Website Resmi Sekolah</h3>
+                            <p class="text-gray-600 text-sm mb-4 line-clamp-2">Pengembangan website resmi surauquranboardingschool.sch.id sebagai pusat informasi digital.</p>
+                            <a href="https://surauquranboardingschool.sch.id" target="_blank" class="inline-flex items-center text-navy font-semibold text-sm hover:text-gold transition-colors">Kunjungi Situs <i class="fas fa-external-link-alt ml-2 text-xs"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Portfolio 2 -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 group hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-delay="200">
+                        <div class="relative h-48 overflow-hidden bg-gray-200">
+                            <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Aplikasi Data" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://picsum.photos/seed/data/800/600'">
+                            <div class="absolute top-4 left-4"><span class="bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">Excel App & Data</span></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-heading font-bold text-xl text-navy mb-2">Aplikasi Pengolah Data Excel</h3>
+                            <p class="text-gray-600 text-sm mb-4 line-clamp-2">Sistem otomatisasi rumus dan makro untuk mempermudah perhitungan nilai, data sekolah, dan tugas akhir.</p>
+                            <a href="#kontak" class="inline-flex items-center text-navy font-semibold text-sm hover:text-gold transition-colors">Tanya Detail <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Portfolio 3 -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 group hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-delay="300">
+                        <div class="relative h-48 overflow-hidden bg-gray-200">
+                            <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Blogging" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://picsum.photos/seed/blog/800/600'">
+                            <div class="absolute top-4 left-4"><span class="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">Web Pribadi / SEO</span></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-heading font-bold text-xl text-navy mb-2">Blog Edukasi</h3>
+                            <p class="text-gray-600 text-sm mb-4 line-clamp-2">Website portofolio dan blog edukasi yang dirancang khusus dengan optimasi SEO tingkat tinggi.</p>
+                            <a href="https://nofri.id" target="_blank" class="inline-flex items-center text-navy font-semibold text-sm hover:text-gold transition-colors">Kunjungi Blog <i class="fas fa-external-link-alt ml-2 text-xs"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimoni Section (Fitur Baru) -->
+        <section id="testimoni" class="py-20 bg-brand-light">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy mb-4">Apa Kata Mereka?</h2>
+                    <div class="w-20 h-1 bg-gold mx-auto rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Testi 1 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 relative" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fas fa-quote-right absolute top-6 right-6 text-4xl text-gray-100"></i>
+                        <p class="text-gray-600 italic mb-6 text-sm leading-relaxed relative z-10">"Website sekolah kami kini jauh lebih profesional dan mudah dikelola. Sangat puas dengan pelayanan Pak Nofri yang ramah dan cepat tanggap."</p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center text-gray-500 font-bold"><i class="fas fa-user"></i></div>
+                            <div>
+                                <h4 class="font-bold text-navy text-sm">Kepala Sekolah</h4>
+                                <p class="text-xs text-gray-500">Klien Web Sekolah</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testi 2 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 relative" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-quote-right absolute top-6 right-6 text-4xl text-gray-100"></i>
+                        <p class="text-gray-600 italic mb-6 text-sm leading-relaxed relative z-10">"Bimbingan skripsi dan bantuan olah data Excel-nya sangat luar biasa. Menyelamatkan tugas akhir saya dengan penjelasan yang super logis."</p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center text-gray-500 font-bold"><i class="fas fa-user-graduate"></i></div>
+                            <div>
+                                <h4 class="font-bold text-navy text-sm">Mahasiswa S1</h4>
+                                <p class="text-xs text-gray-500">Klien Asistensi Akademik</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testi 3 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 relative" data-aos="fade-up" data-aos-delay="300">
+                        <i class="fas fa-quote-right absolute top-6 right-6 text-4xl text-gray-100"></i>
+                        <p class="text-gray-600 italic mb-6 text-sm leading-relaxed relative z-10">"Pembina pramuka terbaik yang sangat inspiratif. Cara mengajarnya selalu berhasil membuat santri disiplin sekaligus bersemangat."</p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center text-gray-500 font-bold"><i class="fas fa-users"></i></div>
+                            <div>
+                                <h4 class="font-bold text-navy text-sm">Rekan Pendidik</h4>
+                                <p class="text-xs text-gray-500">MTs Surau Qur'an</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog / Artikel Terbaru Section (Fitur Baru untuk SEO) -->
+        <section id="blog" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy mb-4">Artikel & Wawasan</h2>
+                    <div class="w-20 h-1 bg-gold mx-auto rounded-full"></div>
+                    <p class="mt-4 text-gray-500">Tulisan terbaru dari blog nofri.id</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Artikel 1 -->
+                    <div class="group cursor-pointer" data-aos="fade-up" data-aos-delay="100">
+                        <div class="overflow-hidden rounded-xl mb-4">
+                            <img src="https://images.unsplash.com/photo-1546410531-ea4ca67d5053?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Belajar Bahasa Arab" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://picsum.photos/seed/arab/600/400'">
+                        </div>
+                        <div class="flex gap-3 text-xs text-gray-500 mb-2">
+                            <span><i class="far fa-calendar-alt mr-1"></i> 12 Des 2025</span>
+                            <span><i class="far fa-folder mr-1"></i> Edukasi</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-navy mb-2 group-hover:text-gold transition-colors">Cara Cepat Memahami Nahwu Shorof Bagi Pemula</h3>
+                        <p class="text-sm text-gray-600 mb-3 line-clamp-2">Mempelajari struktur tata bahasa Arab tidak harus membosankan. Berikut adalah trik mudah memahami nahwu shorof...</p>
+                        <span class="text-gold font-semibold text-sm">Baca Selengkapnya <i class="fas fa-angle-right"></i></span>
+                    </div>
+
+                    <!-- Artikel 2 -->
+                    <div class="group cursor-pointer" data-aos="fade-up" data-aos-delay="200">
+                        <div class="overflow-hidden rounded-xl mb-4">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="SEO" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://picsum.photos/seed/seo/600/400'">
+                        </div>
+                        <div class="flex gap-3 text-xs text-gray-500 mb-2">
+                            <span><i class="far fa-calendar-alt mr-1"></i> 05 Jan 2026</span>
+                            <span><i class="far fa-folder mr-1"></i> Teknologi</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-navy mb-2 group-hover:text-gold transition-colors">Pentingnya SEO Untuk Website Sekolah di Tahun Ini</h3>
+                        <p class="text-sm text-gray-600 mb-3 line-clamp-2">Memiliki website saja tidak cukup. Sekolah perlu menerapkan optimasi SEO agar mudah ditemukan oleh calon pendaftar di Google...</p>
+                        <span class="text-gold font-semibold text-sm">Baca Selengkapnya <i class="fas fa-angle-right"></i></span>
+                    </div>
+
+                    <!-- Artikel 3 -->
+                    <div class="group cursor-pointer" data-aos="fade-up" data-aos-delay="300">
+                        <div class="overflow-hidden rounded-xl mb-4">
+                            <img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Rumus Excel" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://picsum.photos/seed/excel/600/400'">
+                        </div>
+                        <div class="flex gap-3 text-xs text-gray-500 mb-2">
+                            <span><i class="far fa-calendar-alt mr-1"></i> 10 Feb 2026</span>
+                            <span><i class="far fa-folder mr-1"></i> Tips & Trik</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-navy mb-2 group-hover:text-gold transition-colors">5 Rumus Excel Rahasia Untuk Olah Data Skripsi</h3>
+                        <p class="text-sm text-gray-600 mb-3 line-clamp-2">Bagi mahasiswa tingkat akhir, mengolah data seringkali jadi hambatan. Gunakan 5 rumus Excel otomatis ini untuk mempercepat kerjamu...</p>
+                        <span class="text-gold font-semibold text-sm">Baca Selengkapnya <i class="fas fa-angle-right"></i></span>
+                    </div>
+                </div>
+                <div class="text-center mt-10">
+                    <a href="https://nofri.id" target="_blank" class="inline-block border border-navy text-navy hover:bg-navy hover:text-white px-6 py-2 rounded-lg font-medium transition-all text-sm">Lihat Semua Artikel</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section (Fitur Baru) -->
+        <section class="py-20 bg-brand-light">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h2 class="font-heading text-3xl font-bold text-navy mb-4">Pertanyaan Umum (FAQ)</h2>
+                    <p class="text-gray-500 text-sm">Hal-hal yang sering ditanyakan seputar layanan saya.</p>
+                </div>
+
+                <div class="space-y-4" data-aos="fade-up" data-aos-delay="100">
+                    <details class="bg-white rounded-xl shadow-sm border border-gray-100 group [&_summary::-webkit-details-marker]:hidden">
+                        <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-5 text-navy hover:text-gold">
+                            <span>Apakah menerima jasa pembuatan website untuk selain sekolah?</span>
+                            <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
+                        </summary>
+                        <div class="text-gray-600 text-sm px-5 pb-5 leading-relaxed">
+                            Tentu saja! Selain instansi pendidikan, saya juga melayani pembuatan website untuk profil bisnis (UMKM), website personal/portofolio, e-commerce sederhana, hingga aplikasi web custom sesuai kebutuhan Anda.
+                        </div>
+                    </details>
+                    
+                    <details class="bg-white rounded-xl shadow-sm border border-gray-100 group [&_summary::-webkit-details-marker]:hidden">
+                        <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-5 text-navy hover:text-gold">
+                            <span>Bagaimana sistem layanan asistensi karya tulis ilmiahnya?</span>
+                            <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
+                        </summary>
+                        <div class="text-gray-600 text-sm px-5 pb-5 leading-relaxed">
+                            Layanan ini berupa pendampingan eksklusif. Mulai dari pencarian referensi jurnal, penyusunan kerangka tulisan (makalah/skripsi), hingga olah data dan format layout. Semuanya dikerjakan secara profesional, cepat, dan terjaga kerahasiaannya.
+                        </div>
+                    </details>
+
+                    <details class="bg-white rounded-xl shadow-sm border border-gray-100 group [&_summary::-webkit-details-marker]:hidden">
+                        <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-5 text-navy hover:text-gold">
+                            <span>Apakah bisa diundang sebagai pemateri Pramuka atau Bahasa Arab?</span>
+                            <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
+                        </summary>
+                        <div class="text-gray-600 text-sm px-5 pb-5 leading-relaxed">
+                            Sangat bisa. Silakan hubungi saya melalui WhatsApp atau form kontak di bawah untuk mendiskusikan jadwal dan materi yang diinginkan.
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kontak Section -->
+        <section id="kontak" class="py-20 bg-navy relative overflow-hidden">
+            <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 20px 20px;"></div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="font-heading text-3xl md:text-4xl font-bold text-white mb-4">Mari Berkolaborasi</h2>
+                    <div class="w-20 h-1 bg-gold mx-auto rounded-full"></div>
+                    <p class="mt-4 text-gray-300">Hubungi saya untuk diskusi seputar pendidikan, pengembangan web, atau kerjasama.</p>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-12 bg-white rounded-2xl shadow-2xl overflow-hidden max-w-5xl mx-auto">
+                    
+                    <div class="w-full md:w-2/5 bg-gold p-10 text-white flex flex-col justify-between" data-aos="fade-right">
+                        <div>
+                            <h3 class="text-2xl font-bold font-heading mb-6">Informasi Kontak</h3>
+                            <p class="text-gold-100 mb-8">Saya terbuka untuk diskusi, proyek pembuatan website pendidikan, maupun pendampingan akademik.</p>
+                            
+                            <div class="space-y-6">
+                                <div class="flex items-start gap-4">
+                                    <div class="bg-white/20 p-3 rounded-full"><i class="fas fa-envelope text-white"></i></div>
+                                    <div>
+                                        <p class="text-sm text-gold-100">Email</p>
+                                        <a href="mailto:nofriahmadc@gmail.com" class="font-medium hover:text-navy transition-colors">nofriahmadc@gmail.com</a>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <div class="bg-white/20 p-3 rounded-full"><i class="fas fa-location-dot text-white"></i></div>
+                                    <div>
+                                        <p class="text-sm text-gold-100">Lokasi</p>
+                                        <p class="font-medium text-sm">MTs Surau Qur'an Boarding School,<br>Batusangkar, Sumatera Barat.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-12">
+                            <p class="text-sm text-gold-100 mb-4">Temukan saya di media sosial:</p>
+                            <div class="flex gap-4">
+                                <button onclick="openWaModal()" title="WhatsApp" class="bg-white/20 hover:bg-white hover:text-gold w-10 h-10 rounded-full flex items-center justify-center transition-all"><i class="fab fa-whatsapp text-lg"></i></button>
+                                <a href="#" title="Telegram" class="bg-white/20 hover:bg-white hover:text-gold w-10 h-10 rounded-full flex items-center justify-center transition-all"><i class="fab fa-telegram text-lg"></i></a>
+                                <a href="#" title="Facebook" class="bg-white/20 hover:bg-white hover:text-gold w-10 h-10 rounded-full flex items-center justify-center transition-all"><i class="fab fa-facebook-f text-lg"></i></a>
+                                <a href="https://nofri.id" title="Website Blog" class="bg-white/20 hover:bg-white hover:text-gold w-10 h-10 rounded-full flex items-center justify-center transition-all"><i class="fas fa-globe text-lg"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-full md:w-3/5 p-10" data-aos="fade-left">
+                        <h3 class="text-2xl font-bold font-heading text-navy mb-6">Kirim Pesan Cepat</h3>
+                        
+                        <div id="form-success-msg" class="hidden mb-6 bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-lg relative flex items-center gap-3">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span>Pesan berhasil dikirim! Saya akan segera merespons.</span>
+                        </div>
+
+                        <form id="contact-form" class="space-y-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Nama Lengkap</label>
+                                    <input type="text" required placeholder="Masukkan nama Anda..." class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gold outline-none transition-all">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Nomor WA / Email</label>
+                                    <input type="text" required placeholder="Contoh: 0812xxxx / email@contoh.com" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gold outline-none transition-all">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Pilih Layanan (Opsional)</label>
+                                <select class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gold outline-none transition-all bg-white">
+                                    <option>Pembuatan Website</option>
+                                    <option>Asistensi Akademik / Skripsi</option>
+                                    <option>Aplikasi Excel</option>
+                                    <option>Undangan Pemateri</option>
+                                    <option>Lainnya</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Pesan Anda</label>
+                                <textarea rows="3" required placeholder="Tuliskan detail pesan, pertanyaan, atau kebutuhan proyek Anda di sini..." class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gold outline-none transition-all resize-none"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-navy hover:bg-navy-light text-white font-bold py-3 px-4 rounded-lg transition-colors shadow-md flex items-center justify-center gap-2">
+                                <i class="fas fa-paper-plane"></i> Kirim Pesan
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Floating WhatsApp Button (Fitur Baru) -->
+    <button onclick="openWaModal()" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl z-50 hover:scale-110 hover:bg-green-600 transition-all duration-300 group">
+        <i class="fab fa-whatsapp text-3xl"></i>
+        <!-- Tooltip -->
+        <span class="absolute right-16 bg-white text-gray-700 text-xs font-bold px-3 py-2 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+            Chat via WhatsApp!
+        </span>
+    </button>
+
+    <!-- Modal Pilihan WhatsApp -->
+    <div id="wa-modal" class="fixed inset-0 z-[60] flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-navy/60 backdrop-blur-sm" onclick="closeWaModal()"></div>
+        
+        <!-- Modal Content -->
+        <div class="bg-white rounded-2xl p-6 md:p-8 z-10 w-11/12 max-w-sm shadow-2xl transform scale-95 transition-transform duration-300" id="wa-modal-content">
+            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 relative">
+                <i class="fab fa-whatsapp text-3xl text-green-500"></i>
+                <div class="absolute -bottom-1 -right-1 w-6 h-6 bg-white rounded-full flex items-center justify-center">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                    <div class="w-4 h-4 bg-green-500 rounded-full"></div>
+                </div>
+            </div>
+            
+            <h3 class="font-heading font-bold text-xl text-navy mb-2 text-center">Hubungi via WhatsApp</h3>
+            <p class="text-sm text-gray-500 mb-6 text-center leading-relaxed">Pilih aplikasi WhatsApp yang terinstal di perangkat Anda untuk melanjutkan.</p>
+            
+            <div class="space-y-3">
+                <!-- Link WA Biasa -->
+                <a href="https://wa.me/6282288922688?text=Halo%20Pak%20Nofri%2C%20saya%20mengunjungi%20website%20portofolio%20Anda%20%28nofri.id%29%20dan%20tertarik%20untuk%20berdiskusi%20lebih%20lanjut%20mengenai%20layanan%20yang%20Anda%20tawarkan." target="_blank" onclick="closeWaModal()" class="flex items-center justify-center gap-3 w-full border-2 border-green-500 text-green-600 hover:bg-green-50 font-semibold py-3 px-4 rounded-xl transition-colors">
+                    <i class="fab fa-whatsapp text-xl"></i> WhatsApp Biasa
+                </a>
+                
+                <!-- Link WA Business Khusus Android -->
+                <a href="intent://send/?phone=6282288922688&text=Halo%20Pak%20Nofri%2C%20saya%20mengunjungi%20website%20portofolio%20Anda%20%28nofri.id%29%20dan%20tertarik%20untuk%20berdiskusi%20lebih%20lanjut%20mengenai%20layanan%20yang%20Anda%20tawarkan.#Intent;scheme=whatsapp;package=com.whatsapp.w4b;S.browser_fallback_url=https://wa.me/6282288922688;end" target="_blank" onclick="closeWaModal()" class="flex items-center justify-center gap-3 w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-4 rounded-xl transition-colors shadow-md">
+                    <i class="fas fa-briefcase text-lg"></i> WhatsApp Business
+                </a>
+            </div>
+            
+            <div class="text-center mt-5">
+                <button onclick="closeWaModal()" class="text-sm font-medium text-gray-400 hover:text-navy transition-colors">Batal</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-navy-dark text-gray-400 py-8 text-center border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4">
+            <p>&copy; <span id="current-year"></span> Nofri Ahmad Candra. Hak Cipta Dilindungi.</p>
+            <p class="text-sm mt-2 text-gray-500">Ruang Inspirasi Pendidikan | <a href="https://nofri.id" class="hover:text-gold transition-colors">nofri.id</a></p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true, offset: 50 });
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        const mobileIcon = document.getElementById('mobile-icon');
+
+        function openMobileMenu() {
+            menu.classList.remove('opacity-0', 'scale-95', 'pointer-events-none', '-translate-y-4');
+            menu.classList.add('opacity-100', 'scale-100', 'pointer-events-auto', 'translate-y-0');
+            mobileIcon.classList.remove('fa-bars');
+            mobileIcon.classList.add('fa-times');
+        }
+
+        function closeMobileMenu() {
+            menu.classList.remove('opacity-100', 'scale-100', 'pointer-events-auto', 'translate-y-0');
+            menu.classList.add('opacity-0', 'scale-95', 'pointer-events-none', '-translate-y-4');
+            mobileIcon.classList.remove('fa-times');
+            mobileIcon.classList.add('fa-bars');
+        }
+
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (menu.classList.contains('opacity-0')) openMobileMenu(); else closeMobileMenu();
+        });
+
+        mobileLinks.forEach(link => link.addEventListener('click', closeMobileMenu));
+
+        document.addEventListener('click', (e) => {
+            if (!menu.classList.contains('opacity-0') && !menu.contains(e.target) && !btn.contains(e.target)) {
+                closeMobileMenu();
+            }
+        });
+
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) navbar.classList.add('shadow-md'); else navbar.classList.remove('shadow-md');
+        });
+
+        const contactForm = document.getElementById('contact-form');
+        const successMsg = document.getElementById('form-success-msg');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            successMsg.classList.remove('hidden');
+            contactForm.reset();
+            setTimeout(() => successMsg.classList.add('hidden'), 5000);
+        });
+
+        // Animasi Typewriter (Teks Mengetik)
+        const phrases = [
+            "Web Development Custom",
+            "Pendidikan Bahasa Arab",
+            "Asistensi & Olah Data",
+            "Optimasi SEO & Blogging",
+            "Pembina Karakter Pramuka"
+        ];
+        let phraseIndex = 0;
+        let letterIndex = 0;
+        let isDeleting = false;
+        const typewriterElement = document.getElementById("typewriter");
+
+        function typeEffect() {
+            const currentPhrase = phrases[phraseIndex];
+            
+            if (isDeleting) {
+                typewriterElement.textContent = currentPhrase.substring(0, letterIndex - 1);
+                letterIndex--;
+            } else {
+                typewriterElement.textContent = currentPhrase.substring(0, letterIndex + 1);
+                letterIndex++;
+            }
+
+            // Kecepatan mengetik
+            let typeSpeed = isDeleting ? 50 : 100;
+
+            // Jika kata sudah selesai diketik
+            if (!isDeleting && letterIndex === currentPhrase.length) {
+                typeSpeed = 2000; // Jeda sebelum menghapus
+                isDeleting = true;
+            } 
+            // Jika kata sudah selesai dihapus
+            else if (isDeleting && letterIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                typeSpeed = 500; // Jeda sebelum mengetik kata baru
+            }
+
+            setTimeout(typeEffect, typeSpeed);
+        }
+
+        // Mulai animasi saat halaman dimuat
+        setTimeout(typeEffect, 1000); // Mulai dengan jeda 1 detik
+
+        // Modal WhatsApp Logic
+        const waModal = document.getElementById('wa-modal');
+        const waModalContent = document.getElementById('wa-modal-content');
+
+        function openWaModal() {
+            waModal.classList.remove('opacity-0', 'pointer-events-none');
+            waModal.classList.add('opacity-100', 'pointer-events-auto');
+            waModalContent.classList.remove('scale-95');
+            waModalContent.classList.add('scale-100');
+        }
+
+        function closeWaModal() {
+            waModal.classList.remove('opacity-100', 'pointer-events-auto');
+            waModal.classList.add('opacity-0', 'pointer-events-none');
+            waModalContent.classList.remove('scale-100');
+            waModalContent.classList.add('scale-95');
+        }
+
+    </script>
+</body>
+</html>
